@@ -3,13 +3,27 @@ const path = require('path');
 
 const home = Router();
 
-const profiles = require('../../assets/profiles.json');
+const PROFILES = require('../../assets/profiles.json');
 
-home.get('/', (request, response) => {
-  response.send(profiles);
+home.get('/:id', (request, response) => {
+  const {id: inputId} = request.params;
+  const profile = PROFILES.find(({id}) => (id === inputId));
+
+  if(!profile) {
+    return (response.status(404).send('Profile with given ID not found'))
+  }
+
+  response.send(profile);
 });
 
 home.get('/img/:id', (request, response) => {
+  const {id: inputId} = request.params;
+  const profile = PROFILES.find(({id}) => (id === inputId));
+
+  if(!profile) {
+    return (response.status(404).send('Profile with given ID not found'))
+  }
+  
   response.sendFile(
     path.resolve(
       __dirname,

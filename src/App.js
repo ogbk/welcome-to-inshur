@@ -9,7 +9,7 @@ function App() {
   useEffect(
     () => {
       const fetchData = async () => {
-        const res = await fetch('/api');
+        const res = await fetch('/api/ogbu_olu');
         const json = await res.json();
         setProfile(json);
         
