@@ -1,0 +1,131 @@
+// sass-lint:disable nesting-depth
+// sass-lint:disable no-vendor-prefixes
+
+$blue: #00f
+$grey: #808080
+$green: #008000
+$red: #f00
+$black: #000
+$yellow: #ff0
+$white: #fff
+$primary-color: #1d7874
+
+$hover-color: #0f0 // green INSTEAD OF orange #ffa500 
+$border-color: #999
+$clicked-row-color: #0f0 // green
+
+.hide
+  visibility: hidden
+
+.good
+  color: $green
+
+.error
+  color: $red
+
+*
+  color: $primary-color
+  font-size: 1em
+
+body
+  font-family: sans-serif, Consolas
+
+.click
+  cursor: pointer
+
+.hover-row
+  background-color: $hover-color
+
+.clicked-row
+  background-color: $clicked-row-color
+
+
+.app
+  font-size: 1em
+  margin: 1% 2% 2%
+  min-width: 630px
+  width: 90%
+
+  .search-bar
+    font-size: 1.5em
+    margin-bottom: 2em
+    margin-top: 1em
+
+    input
+      border: 0
+      //border-bottom: 1px solid $blue
+      width: 25em
+
+    .input-ok
+      border-bottom: 1.5px solid $blue
+
+    .input-error
+      border-bottom: 1.5px solid $red
+
+
+  .items
+    display: flex
+    flex-direction: row
+    overflow: hidden
+
+    .items-list,
+    .item-details
+      flex-grow: 1
+      height: 75vh
+        
+    .item-details
+      flex-grow: 1
+      font-family: Consolas
+      margin-left: 3em
+      width: 40%
+
+      img
+        height: 693px
+        width: 480px
+
+    .items-list
+      border: .2px solid $black
+      overflow-y: auto
+      width: 60%
+
+      table
+        width: 100%
+
+        td,
+        th
+          border: 1px solid $border-color
+          padding: .2rem
+          text-align: left
+
+        tbody
+          tr
+            td
+              width: 100px
+
+            .line-ok
+              &:hover
+                background-color: $hover-color
+
+            .line-error
+              color: $red
+
+            .line-loading
+              border: 0
+              display: inline-block
+
+.loading
+  animation: animLoading linear 1s 0s infinite
+  border: 4px solid $white
+  border-left: 4px solid $green
+  border-radius: 50%
+  border-top: 4px solid $green
+  height: 8em
+  margin: 3em
+  width: 8em
+
+@keyframes animLoading
+  from
+    transform: rotate(0deg)
+
+  to
+    transform: rotate(360deg)
