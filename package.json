@@ -9,20 +9,50 @@
     ]
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
+    "@babel/core": "7.6.4",
+    "@babel/plugin-proposal-async-generator-functions": "7.2.0",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-transform-runtime": "7.6.2",
+    "@babel/polyfill": "7.6.0",
+    "@babel/preset-env": "7.6.3",
+    "@babel/preset-react": "7.6.3",
+    "css-loader": "3.2.0",
     "concurrently": "^5.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "sass": "1.23.0",
+    "sass-loader": "8.0.0",
+    "style-loader": "0.18.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.6.4",
+    "@babel/preset-flow": "7.0.0",
+    "babel-eslint": "10.1.0",
+    "babel-jest": "24.9.0",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
+    "eslint": "6.6.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-react-hooks": "1.7.0",
+    "eslint-watch": "6.0.1",
+    "flow-bin": "0.109.0",
+    "jest": "24.9.0",
+    "jest-cli": "24.9.0",
+    "sass-lint": "1.12.1"
   },
   "scripts": {
     "start": "concurrently \"react-scripts start\" \"yarn start:api\"",
     "start:api": "yarn --cwd api start:dev",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass-lint": "sass-lint src/sass/styles.sass --verbose -q",
+    "eslint": "eslint src/",
+    "flow": "flow",
+    "test": "jest"
   },
   "eslintConfig": {
     "extends": "react-app"
