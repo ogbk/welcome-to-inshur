@@ -4,21 +4,41 @@ import React from 'react';
 import { configure, shallow, mount, render } from 'enzyme';
 import Adapter  from 'enzyme-adapter-react-16';
 import App from '../src/App';
+import Profile from '../src/Profile';
+import NotFound from '../src/NotFound';
 
 configure({ adapter: new Adapter() });
 
 let app;
-let tabs;
-
-beforeAll(() => {
-  app = mount(<App />);
-  tabs = app.find('.page-tab > span');
-});
 
 describe('<App/>', () => {
 
-  test('basic', () => {
-    expect(1).toEqual(1)
+  beforeAll(() => {
+    app = mount(<App />);
+  });
+
+  test('on mount, contains search bar [text, select field, submit button]', () => {
+    expect(app.find('form').children()).toHaveLength(3);
+    expect(app.find('form').childAt(0).type()).toEqual('span');
+    expect(app.find('form').childAt(0).text()).toEqual('Find karate champion: ');
+
+    expect(app.find('form').childAt(1).type()).toEqual('select');
+    expect(app.find('form').childAt(1).children()).toHaveLength(2);
+    expect(app.find('form').childAt(1).childAt(0).text()).toMatch('Ogbu Olu');
+    expect(app.find('form').childAt(1).childAt(1).text()).toMatch('Chuck Norris');
+
+    expect(app.find('form').childAt(2).type()).toEqual('button');
+    expect(app.find('form').childAt(2).prop('type')).toEqual('submit');
+
+  });
+
+  test('on mount, does not load <Profile/> or <NotFound/>', () => {
+    expect(app.find(Profile).exists()).toBe(false);
+    expect(app.find(Profile).exists()).not.toBe(true);
+
+    expect(app.find(NotFound).exists()).toBe(false);
+    expect(app.find(NotFound).exists()).not.toBe(true);
+
   });
 
 })
