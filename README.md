@@ -3,7 +3,6 @@
 ## Tech stack
 
 - React
-- Flow - static typechecking tool
 - Sass - css preprocessor
 - Eslint - code linter
 - Jest & Enzyme - React testing tools
@@ -36,12 +35,6 @@ Also app assumes:
 - ESLint `yarn eslint`
 - Sass lint `yarn sass-lint`
 
-
-## Static typechecking with Flow
-
-- Stop flow server `yarn flow stop`
-- Start flow server `yarn flow start`
-- Run flow `yarn flow status`
 
 ## Testing with jest & enzyme
 
