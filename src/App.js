@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './sass/styles.sass';
 
 function App() {
   const DEFAULT_PROFILE = 'ogbu_olu';
