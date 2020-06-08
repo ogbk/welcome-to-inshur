@@ -40,8 +40,8 @@ function App() {
       <form onSubmit={handleSubmit}>
         <span>Find karate champion: </span>
         <select className="search-column" value={profileId} onChange={handleChange}>
-          <option value="ogbu_olu"> Ogbu Olu </option>
-          <option value="chuck_norris"> Chuck Norris </option>
+          <option value="ogbu_olu">Ogbu Olu</option>
+          <option value="chuck_norris">Chuck Norris</option>
         </select>
         <button type="submit" className="click"> GET PROFILE </button>
       </form>
