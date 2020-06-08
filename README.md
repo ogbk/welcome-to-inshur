@@ -30,6 +30,13 @@ App also assumes:
 
   - each profile corresponds to a unique id ==> `req.params.id`
 
+## Running
+
+- Clone or download the application
+- ```yarn install``` to download all necessary packages 
+- ```yarn start``` to run the application ==> a new browser opens up
+
+
 ## Linting
 
 - ESLint `yarn eslint`
