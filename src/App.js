@@ -1,11 +1,14 @@
+// @flow
+
 import React, { useState } from 'react';
 import Profile from './Profile';
+import NotFound from './NotFound';
 
 function App() {
   const DEFAULT_PROFILE = 'ogbu_olu';
 
   const [profileId, setProfileId] = useState(DEFAULT_PROFILE);
-  const [profileActive, setProfileActive] = useState(false);
+  const [profileActive, setProfileActive] = useState(undefined);
   const [profile, setProfile] = useState(undefined);
 
   const handleChange = ({ target: { value } }) => {
@@ -44,6 +47,7 @@ function App() {
 
       <br />
       { profileActive && <Profile profile={profile} profileId={profileId} /> }
+      { !profileActive && profileActive !== undefined && <NotFound /> }
     </div>
   );
 }
