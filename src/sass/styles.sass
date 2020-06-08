@@ -27,14 +27,6 @@ $clicked-row-color: #0f0 // green
   color: $primary-color
   font-size: 1em
 
-.search-column
-  border: 0
-  border-bottom: 1px solid $blue
-  display: inline-block
-  outline: none
-  margin-left: 1em
-  margin-right: 1em
-
 body
   font-family: sans-serif, Consolas
 
@@ -47,78 +39,38 @@ body
 .clicked-row
   background-color: $clicked-row-color
 
+.search-column
+  border: 0
+  border-bottom: 1px solid $blue
+  display: inline-block
+  margin-left: 1em
+  margin-right: 1em
+  outline: none
 
-.app
-  font-size: 1em
-  margin: 1% 2% 2%
-  min-width: 630px
-  width: 90%
+.profile-page
+  display: flex
+  flex-direction: row
+  width: 100%
 
-  .search-bar
-    font-size: 1.5em
-    margin-bottom: 2em
-    margin-top: 1em
+  img
+    display: inline-block
+    flex-grow: 1
+    min-width: 1em
+    height: auto
 
-    input
-      border: 0
-      //border-bottom: 1px solid $blue
-      width: 25em
+  .profile-details
+    flex-grow: 3
+    margin-left: 1em
+    min-width: 20%
 
-    .input-ok
-      border-bottom: 1.5px solid $blue
+.field-key
+  color: $black
 
-    .input-error
-      border-bottom: 1.5px solid $red
+.field-value
+  font-size: 1.3em
+  margin-bottom: 2em
 
-
-  .items
-    display: flex
-    flex-direction: row
-    overflow: hidden
-
-    .items-list,
-    .item-details
-      flex-grow: 1
-      height: 75vh
-        
-    .item-details
-      flex-grow: 1
-      font-family: Consolas
-      margin-left: 3em
-      width: 40%
-
-      img
-        height: 693px
-        width: 480px
-
-    .items-list
-      border: .2px solid $black
-      overflow-y: auto
-      width: 60%
-
-      table
-        width: 100%
-
-        td,
-        th
-          border: 1px solid $border-color
-          padding: .2rem
-          text-align: left
-
-        tbody
-          tr
-            td
-              width: 100px
-
-            .line-ok
-              &:hover
-                background-color: $hover-color
-
-            .line-error
-              color: $red
-
-            .line-loading
-              border: 0
-              display: inline-block
-
+.field-value-list
+  font-size: 1.3em
+  margin-bottom: 0.2em
 
