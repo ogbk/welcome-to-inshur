@@ -27,6 +27,14 @@ $clicked-row-color: #0f0 // green
   color: $primary-color
   font-size: 1em
 
+.search-column
+  border: 0
+  border-bottom: 1px solid $blue
+  display: inline-block
+  outline: none
+  margin-left: 1em
+  margin-right: 1em
+
 body
   font-family: sans-serif, Consolas
 
@@ -113,19 +121,4 @@ body
               border: 0
               display: inline-block
 
-.loading
-  animation: animLoading linear 1s 0s infinite
-  border: 4px solid $white
-  border-left: 4px solid $green
-  border-radius: 50%
-  border-top: 4px solid $green
-  height: 8em
-  margin: 3em
-  width: 8em
 
-@keyframes animLoading
-  from
-    transform: rotate(0deg)
-
-  to
-    transform: rotate(360deg)
