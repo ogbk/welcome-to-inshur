@@ -25,8 +25,8 @@ When it starts, user can select one of 2 profiles:
   - So the app handles this missing record, sending an appropriate `<NotFound/>` component
   - (And besides, Chuck Norris is great in judo and brazilian jiu-jitsu, not karate ;))
 
-Also app assumes:
-  - server (api) has `assets/img/` folder where `req.params.id` from extracted from express `req.url` corresponds to a particular jpeg image file.
+App also assumes:
+  - server (api) has `assets/img/` folder where the `req.params.id` extracted from express `req.url` corresponds to a particular jpeg image file.
 
   - each profile corresponds to a unique id ==> `req.params.id`
 
