@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
+import Profile from './Profile';
 
 function App() {
   const DEFAULT_PROFILE = 'ogbu_olu';
 
   const [profileId, setProfileId] = useState(DEFAULT_PROFILE);
   const [profileActive, setProfileActive] = useState(false);
-  const [picture, setPicture] = useState(undefined);
   const [profile, setProfile] = useState(undefined);
 
   const handleChange = ({ target: { value } }) => {
@@ -21,11 +21,6 @@ function App() {
       if (res.ok && res.status === 200) {
         const json = await res.json();
         setProfile(json);
-
-        const resPic = await fetch(`/api/img/${profileId}`);
-        const picBlob = await resPic.blob();
-        const pic = await URL.createObjectURL(picBlob);
-        setPicture(pic);
         setProfileActive(true);
       } else {
         setProfileActive(false);
@@ -48,7 +43,7 @@ function App() {
       </form>
 
       <br />
-      { profileActive && <img src={picture} alt="Profile" /> }
+      { profileActive && <Profile profile={profile} profileId={profileId} /> }
     </div>
   );
 }
