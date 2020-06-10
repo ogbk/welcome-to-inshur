@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Profile from './Profile';
 import NotFound from './NotFound';
-import 'regenerator-runtime/runtime.js';  //eslint-disable-line
 
 function App() {
   const DEFAULT_PROFILE = 'ogbu_olu';
