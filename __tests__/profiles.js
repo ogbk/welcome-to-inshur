@@ -1,14 +1,10 @@
 /* eslint-disable */
 
 import React from 'react';
-import { configure, shallow, mount, render } from 'enzyme';
-import Adapter  from 'enzyme-adapter-react-16';
+import { shallow, mount, render } from 'enzyme';
 import App from '../src/App';
 import Profile from '../src/Profile';
 import NotFound from '../src/NotFound';
-
-configure({ adapter: new Adapter() });
-
 
 const ID_OK = 'ogbu_olu';
 const PROFILES = require('../api/assets/profiles.json');
