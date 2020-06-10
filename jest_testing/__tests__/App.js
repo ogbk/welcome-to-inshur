@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import App from '../src/App';
-import Profile from '../src/Profile';
-import NotFound from '../src/NotFound';
+import App from '../../src/App';
+import Profile from '../../src/Profile';
+import NotFound from '../../src/NotFound';
 
 let app;
 
